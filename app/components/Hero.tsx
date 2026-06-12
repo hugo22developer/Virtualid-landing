@@ -1,5 +1,6 @@
 'use client'
 import { useEffect, useState, useRef } from 'react'
+import Icon from './Icon'
 
 const QR_PATTERN = [1,1,1,0,1,1,1,1,0,1,0,1,0,1,1,1,1,1,0,1,0,0,1,0,0,1,0,1,1,1,1,0,1,1,1,1,0,0,1,0,1,0,0,1,1,0,1,0,1]
 const FULL_TEXT = 'VIRTUALID reemplaza las credenciales físicas con identidades digitales verificables, autenticación biométrica y control de acceso en tiempo real. Todo desde una app.'
@@ -91,7 +92,7 @@ export default function Hero({ onOpenModal }: HeroProps) {
       <div className="container">
         <div className="hero-grid">
           <div>
-            <div className="hero-badge">🚀 Plataforma de Identificación Digital de Nueva Generación</div>
+            <div className="hero-badge"><Icon glyph={'🚀'} /> Plataforma de Identificación Digital de Nueva Generación</div>
             <h1>
               Credenciales digitales{' '}
               <span className="glitch-wrap neon-accent">
@@ -107,7 +108,7 @@ export default function Hero({ onOpenModal }: HeroProps) {
             </p>
             <div className="hero-actions">
               <button className="btn btn-primary btn-lg" onClick={() => onOpenModal('demo')}>
-                🎯 Solicitar demo gratuita
+                <Icon glyph={'🎯'} /> Solicitar demo gratuita
               </button>
               <button className="btn btn-outline btn-lg" onClick={() => onOpenModal('login')}>
                 Iniciar sesión →
@@ -135,8 +136,8 @@ export default function Hero({ onOpenModal }: HeroProps) {
               <div className="phone-glow-card">
                 <div className="phone-frame">
                   <div className="phone-screen">
-                    <div className="phone-header">
-                      <div className="phone-avatar">👤</div>
+                      <div className="phone-header">
+                      <div className="phone-avatar"><Icon glyph={'👤'} /></div>
                       <div className="phone-name">Ana García Mendoza</div>
                       <div className="phone-id">ID: VID-2024-00837 · Universidad Nacional</div>
                     </div>
@@ -154,13 +155,13 @@ export default function Hero({ onOpenModal }: HeroProps) {
                         <div className="qr-label">ESCANEAR PARA VERIFICAR</div>
                       </div>
                       <div className="totp-zone">
-                        <div className="totp-label">⚡ CÓDIGO DINÁMICO (TOTP)</div>
+                        <div className="totp-label"><Icon glyph={'⚡'} /> CÓDIGO DINÁMICO (TOTP)</div>
                         <div className="totp-code">847 291</div>
                         <div className="totp-bar-track"><div className="totp-bar" /></div>
                       </div>
                       <div className="status-chip">
                         <div className="status-dot" />
-                        <div className="status-text">IDENTIDAD VERIFICADA · 📍 Campus Norte</div>
+                        <div className="status-text">IDENTIDAD VERIFICADA · <Icon glyph={'📍'} /> Campus Norte</div>
                       </div>
                     </div>
                   </div>
@@ -170,15 +171,15 @@ export default function Hero({ onOpenModal }: HeroProps) {
 
             <div className="floating-cards">
               <div className="f-card f-card-1">
-                <span className="f-card-icon">🔐</span>
+                <span className="f-card-icon"><Icon glyph={'🔐'} /></span>
                 <div><div className="f-card-title">Autenticación biométrica</div><div className="f-card-sub">Face ID · Huella dactilar</div></div>
               </div>
               <div className="f-card f-card-2">
-                <span className="f-card-icon">✅</span>
+                <span className="f-card-icon"><Icon glyph={'✅'} /></span>
                 <div><div className="f-card-title">Acceso concedido</div><div className="f-card-sub">Laboratorio 3B · Hace 2 seg</div></div>
               </div>
               <div className="f-card f-card-3">
-                <span className="f-card-icon">📊</span>
+                <span className="f-card-icon"><Icon glyph={'📊'} /></span>
                 <div><div className="f-card-title">+1,240 accesos hoy</div><div className="f-card-sub">+18% vs ayer</div></div>
               </div>
             </div>

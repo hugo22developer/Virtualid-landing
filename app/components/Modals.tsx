@@ -1,6 +1,7 @@
 'use client'
 import { useState } from 'react'
 import { useToast } from '../context/ToastContext'
+import Icon from './Icon'
 
 interface ModalsProps {
   activeModal: string | null
@@ -255,9 +256,8 @@ const submit = async () => {
             <div className="form-group">
               <label>Nombre *</label>
 
-              <div className="input-wrap">
-                <span className="input-icon">👤</span>
-
+                <div className="input-wrap">
+                <span className="input-icon"><Icon glyph={'👤'} /></span>
                 <input
                   type="text"
                   className={
@@ -288,9 +288,8 @@ const submit = async () => {
             <div className="form-group">
               <label>Apellido *</label>
 
-              <div className="input-wrap">
-                <span className="input-icon">👤</span>
-
+                <div className="input-wrap">
+                <span className="input-icon"><Icon glyph={'👤'} /></span>
                 <input
                   type="text"
                   className={
@@ -322,9 +321,8 @@ const submit = async () => {
           <div className="form-group">
             <label>Correo electrónico *</label>
 
-            <div className="input-wrap">
-              <span className="input-icon">✉️</span>
-
+              <div className="input-wrap">
+              <span className="input-icon"><Icon glyph={'✉️'} /></span>
               <input
                 type="email"
                 className={
@@ -356,8 +354,7 @@ const submit = async () => {
             <label>Teléfono (opcional)</label>
 
             <div className="input-wrap">
-              <span className="input-icon">📱</span>
-
+              <span className="input-icon"><Icon glyph={'📱'} /></span>
               <input
                 type="tel"
                 placeholder="+52 55 1234 5678"
@@ -376,8 +373,7 @@ const submit = async () => {
             <label>Contraseña *</label>
 
             <div className="input-wrap">
-              <span className="input-icon">🔐</span>
-
+              <span className="input-icon"><Icon glyph={'🔐'} /></span>
               <input
                 type="password"
                 className={
@@ -409,8 +405,7 @@ const submit = async () => {
             <label>Confirmar contraseña *</label>
 
             <div className="input-wrap">
-              <span className="input-icon">🔐</span>
-
+              <span className="input-icon"><Icon glyph={'🔐'} /></span>
               <input
                 type="password"
                 className={
@@ -459,8 +454,7 @@ const submit = async () => {
     <label>Nombre de la empresa / institución *</label>
 
     <div className="input-wrap">
-      <span className="input-icon">🏛️</span>
-
+      <span className="input-icon"><Icon glyph={'🏛️'} /></span>
       <input
         type="text"
         className={
@@ -493,8 +487,7 @@ const submit = async () => {
       <label>Razón Social (opcional)</label>
 
       <div className="input-wrap">
-        <span className="input-icon">🏢</span>
-
+      <span className="input-icon"><Icon glyph={'🏢'} /></span>
         <input
           type="text"
           placeholder="Ej. VirtualID Solutions S.A. de C.V."
@@ -513,8 +506,7 @@ const submit = async () => {
       <label>RFC (opcional)</label>
 
       <div className="input-wrap">
-        <span className="input-icon">🧾</span>
-
+        <span className="input-icon"><Icon glyph={'🧾'} /></span>
         <input
           type="text"
           placeholder="Ej. XAXX010101000"
@@ -580,7 +572,7 @@ const submit = async () => {
 <div className={`form-panel${step === 3 ? ' active' : ''}`}>
   <div className="confirm-box">
     <div className="confirm-label">
-      ✅ Resumen de tu registro
+      <Icon glyph={'✅'} /> Resumen de tu registro
     </div>
 
     <div className="confirm-data">
@@ -612,11 +604,11 @@ const submit = async () => {
     style={{ marginBottom: 24 }}
   >
     <div className="sec-badge">
-      🔐 Datos cifrados
+      <Icon glyph={'🔐'} /> Datos cifrados
     </div>
 
     <div className="sec-badge">
-      ✅ Registro seguro
+      <Icon glyph={'✅'} /> Registro seguro
     </div>
   </div>
 
@@ -629,7 +621,7 @@ const submit = async () => {
     {submitting && <span className="spinner" />}
 
     <span className="btn-text">
-      🚀 Crear empresa y administrador
+      <Icon glyph={'🚀'} /> Crear empresa y administrador
     </span>
   </button>
 
@@ -754,23 +746,23 @@ const submit = async () => {
     <div className={`modal-overlay${open ? ' open' : ''}`} onClick={e => { if (e.target === e.currentTarget) onClose() }}>
       <div className="modal" style={{ maxWidth:440 }}>
         <button className="modal-close" onClick={onClose}>×</button>
-        <div style={{ textAlign:'center', marginBottom:28 }}>
-          <div className="logo-icon" style={{ width:52,height:52,fontSize:24,margin:'0 auto 16px' }}>🪪</div>
+          <div style={{ textAlign:'center', marginBottom:28 }}>
+          <div className="logo-icon" style={{ width:52,height:52,fontSize:24,margin:'0 auto 16px' }}><Icon glyph={'🪪'} /></div>
           <div className="modal-title" style={{ fontSize:24 }}>Bienvenido de vuelta</div>
           <div className="modal-sub" style={{ marginBottom:0 }}>Ingresa a tu panel de administración</div>
         </div>
-        <div className="form-group">
+          <div className="form-group">
           <label>Correo electrónico</label>
           <div className="input-wrap">
-            <span className="input-icon">✉️</span>
+            <span className="input-icon"><Icon glyph={'✉️'} /></span>
             <input type="email" className={fv['lemail'] === true ? 'valid' : fv['lemail'] === false ? 'invalid' : ''} placeholder="admin@tuinstitucion.mx" value={form.email} onChange={e => { setForm(p=>({...p,email:e.target.value})); vf('lemail',e.target.value,'email') }} />
           </div>
           <FieldHint valid={fv['lemail']} msg={fm['lemail']||''} />
         </div>
-        <div className="form-group">
+          <div className="form-group">
           <label>Contraseña</label>
           <div className="input-wrap">
-            <span className="input-icon">🔑</span>
+            <span className="input-icon"><Icon glyph={'🔑'} /></span>
             <input type={showPass ? 'text' : 'password'} className={fv['lpass'] === true ? 'valid' : fv['lpass'] === false ? 'invalid' : ''} placeholder="••••••••••••" value={form.password} onChange={e => { setForm(p=>({...p,password:e.target.value})); vf('lpass',e.target.value,'password') }} />
             <span className="input-right" onClick={() => setShowPass(p=>!p)}>{showPass ? '🙈' : '👁'}</span>
           </div>
@@ -787,7 +779,7 @@ const submit = async () => {
           <span className="btn-text">Iniciar sesión</span>
         </button>
         <div className="form-divider">o</div>
-        <button className="btn btn-outline btn-full" onClick={() => showToast('info','Acceso con SSO','Redirigiendo a tu proveedor de identidad…')}>🏢 Acceso con SSO institucional</button>
+        <button className="btn btn-outline btn-full" onClick={() => showToast('info','Acceso con SSO','Redirigiendo a tu proveedor de identidad…')}><Icon glyph={'🏢'} /> Acceso con SSO institucional</button>
         <div className="privacy-note" style={{ marginTop:20 }}>¿No tienes cuenta? <a href="#" onClick={e => { e.preventDefault(); onClose(); onOpen('demo') }}>Solicitar acceso</a></div>
       </div>
     </div>
@@ -829,14 +821,14 @@ function ContactModal({ open, onClose }: { open:boolean; onClose:()=>void }) {
           <div className="form-group">
             <label>Nombre *</label>
             <div className="input-wrap">
-              <span className="input-icon">👤</span>
+              <span className="input-icon"><Icon glyph={'👤'} /></span>
               <input type="text" className={fv['cname'] === true ? 'valid' : fv['cname'] === false ? 'invalid' : ''} placeholder="Tu nombre" value={form.name} onChange={e => { setForm(p=>({...p,name:e.target.value})); vf('cname',e.target.value,'name') }} />
             </div>
           </div>
           <div className="form-group">
             <label>Empresa *</label>
             <div className="input-wrap">
-              <span className="input-icon">🏢</span>
+              <span className="input-icon"><Icon glyph={'🏢'} /></span>
               <input type="text" className={fv['corg'] === true ? 'valid' : fv['corg'] === false ? 'invalid' : ''} placeholder="Tu organización" value={form.org} onChange={e => { setForm(p=>({...p,org:e.target.value})); vf('corg',e.target.value,'name') }} />
             </div>
           </div>
@@ -844,7 +836,7 @@ function ContactModal({ open, onClose }: { open:boolean; onClose:()=>void }) {
         <div className="form-group">
           <label>Correo *</label>
           <div className="input-wrap">
-            <span className="input-icon">✉️</span>
+            <span className="input-icon"><Icon glyph={'✉️'} /></span>
             <input type="email" className={fv['cemail'] === true ? 'valid' : fv['cemail'] === false ? 'invalid' : ''} placeholder="correo@empresa.com" value={form.email} onChange={e => { setForm(p=>({...p,email:e.target.value})); vf('cemail',e.target.value,'email') }} />
           </div>
         </div>
@@ -852,9 +844,9 @@ function ContactModal({ open, onClose }: { open:boolean; onClose:()=>void }) {
           <label>Mensaje</label>
           <textarea placeholder="Cuéntanos sobre tu necesidad o proyecto…" value={form.msg} onChange={e => setForm(p=>({...p,msg:e.target.value}))} style={{ paddingLeft:14 }} />
         </div>
-        <button className={`btn btn-primary btn-full btn-lg${submitting ? ' loading' : ''}`} onClick={submit}>
+          <button className={`btn btn-primary btn-full btn-lg${submitting ? ' loading' : ''}`} onClick={submit}>
           {submitting && <span className="spinner" />}
-          <span className="btn-text">💬 Enviar mensaje</span>
+          <span className="btn-text"><Icon glyph={'💬'} /> Enviar mensaje</span>
         </button>
         <div className="privacy-note">Respuesta garantizada en horario hábil (L–V 9am–6pm CST).</div>
       </div>

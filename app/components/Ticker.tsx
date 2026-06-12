@@ -15,6 +15,8 @@ const TICKER_EVENTS = [
   { icon:'✅', text:'<strong>Ing. Reyes</strong> marcó salida — Turno B',    time:'hace 50s', tag:'tick-ok',   label:'SALIDA'     },
 ]
 
+import Icon from './Icon'
+
 export default function Ticker() {
   const events = [...TICKER_EVENTS, ...TICKER_EVENTS]
   return (
@@ -27,7 +29,7 @@ export default function Ticker() {
         <div className="ticker-inner">
           {events.map((ev, i) => (
             <div key={i} className="tick-event">
-              <span className="tick-event-icon">{ev.icon}</span>
+              <span className="tick-event-icon"><Icon glyph={ev.icon} /></span>
               <span className="tick-event-text" dangerouslySetInnerHTML={{ __html: ev.text }} />
               <span className="tick-event-time">{ev.time}</span>
               <span className={`tick-tag ${ev.tag}`}>{ev.label}</span>

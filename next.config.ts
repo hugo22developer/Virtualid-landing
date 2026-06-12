@@ -1,7 +1,10 @@
 import type { NextConfig } from "next";
-import path from "path";
 
 const nextConfig: NextConfig = {
+  output: 'export', // Indica a Next.js que genere archivos estáticos (HTML/CSS/JS)
+  images: {
+    unoptimized: true, // Necesario para que las imágenes funcionen en exportación estática
+  },
   experimental: {
     turbo: {
       enabled: false,

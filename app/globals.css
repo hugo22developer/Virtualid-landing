@@ -398,6 +398,16 @@ h1 {
 .feature-card.featured { background:linear-gradient(135deg,rgba(124,58,237,.15),rgba(91,33,182,.1)); border-color:rgba(124,58,237,.4); }
 .tilt-spotlight { position:absolute; inset:0; border-radius:inherit; pointer-events:none; z-index:10; opacity:0; transition:opacity .3s ease; background:radial-gradient(circle 200px at var(--mx,50%) var(--my,50%),rgba(255,255,255,.08) 0%,transparent 70%); }
 .feature-card:hover .tilt-spotlight { opacity:1; }
+
+/* ICONS: keep icon images the same visual size as emojis */
+.icon { width: 1em; height: 1em; display: inline-block; vertical-align: middle; }
+.icon { object-fit: contain; }
+.icon[src$=".svg"] { display: inline-block; }
+.tick-event-icon .icon { width: 1.05em; height: 1.05em; }
+.feature-icon .icon { width: 1.2em; height: 1.2em; }
+.f-card-icon .icon { width: 1.15em; height: 1.15em; }
+.demo-list-icon .icon { width: 1em; height: 1em; }
+.input-icon .icon { width: 1em; height: 1em; }
 .feature-icon { width:52px; height:52px; border-radius:var(--radius-sm); background:linear-gradient(135deg,var(--violet),var(--violet-dark)); display:flex; align-items:center; justify-content:center; font-size:24px; margin-bottom:20px; box-shadow:0 0 20px var(--violet-glow); }
 .feature-icon.blue   { background:linear-gradient(135deg,#2563EB,#1D4ED8); box-shadow:0 0 20px rgba(37,99,235,.3); }
 .feature-icon.green  { background:linear-gradient(135deg,#16A34A,#15803D); box-shadow:0 0 20px rgba(34,197,94,.25); }

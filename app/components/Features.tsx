@@ -1,3 +1,5 @@
+import Icon from './Icon'
+
 const FEATURES = [
   { icon:'👁️', color:'', title:'Autenticación Biométrica', featured:true, desc:'Verificación facial y dactilar integrada directamente en la app móvil. Reconocimiento en menos de 300ms con tecnología anti-spoof liveness detection.' },
   { icon:'⚡', color:'blue', title:'Códigos TOTP Dinámicos', featured:false, desc:'Generación de OTP basados en tiempo (RFC 6238). Cada código es único, caduca en 30 segundos y no puede ser reutilizado.' },
@@ -54,7 +56,9 @@ export default function Features() {
               onMouseLeave={onTiltLeave}
             >
               <div className="tilt-spotlight" />
-              <div className={`feature-icon${f.color ? ' ' + f.color : ''}`}>{f.icon}</div>
+              <div className={`feature-icon${f.color ? ' ' + f.color : ''}`}>
+                <Icon glyph={f.icon} />
+              </div>
               <div className="feature-title">{f.title}</div>
               <div className="feature-desc">{f.desc}</div>
             </div>

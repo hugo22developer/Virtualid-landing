@@ -1,5 +1,6 @@
 "use client"
 import { useEffect, useRef } from 'react'
+import Icon from './Icon'
 
 interface SectionProps {
   onOpenModal: (id: string) => void
@@ -46,10 +47,10 @@ export function DemoSection({ onOpenModal }: SectionProps) {
             <h2 className="section-title" style={{ fontSize:'clamp(28px,4vw,52px)' }}>Deja atrás las tarjetas físicas para siempre</h2>
             <p style={{ color:'var(--gray-300)', margin:'16px 0 32px', fontSize:'15px', lineHeight:1.7 }}>Las tarjetas físicas se pierden, se dañan y no ofrecen trazabilidad. VIRTUALID es la evolución lógica de la identidad institucional.</p>
             <ul className="demo-list">
-              <li><div className="demo-list-icon">✅</div><span><strong>Cero costo de reposición</strong> — No más plásticos, no más impresoras, no más tiempos de espera para credenciales nuevas.</span></li>
-              <li><div className="demo-list-icon">🔒</div><span><strong>Imposible de falsificar</strong> — Cada credencial usa criptografía asimétrica y TOTP que cambia cada 30 segundos.</span></li>
-              <li><div className="demo-list-icon">📱</div><span><strong>Siempre disponible</strong> — El usuario siempre lleva su teléfono. Funciona offline con firma criptográfica local.</span></li>
-              <li><div className="demo-list-icon">📊</div><span><strong>Trazabilidad total</strong> — Cada acceso queda registrado con timestamp, ubicación GPS y nivel de autenticación.</span></li>
+              <li><div className="demo-list-icon"><Icon glyph={'✅'} /></div><span><strong>Cero costo de reposición</strong> — No más plásticos, no más impresoras, no más tiempos de espera para credenciales nuevas.</span></li>
+                <li><div className="demo-list-icon"><Icon glyph={'🔒'} /></div><span><strong>Imposible de falsificar</strong> — Cada credencial usa criptografía asimétrica y TOTP que cambia cada 30 segundos.</span></li>
+                <li><div className="demo-list-icon"><Icon glyph={'📱'} /></div><span><strong>Siempre disponible</strong> — El usuario siempre lleva su teléfono. Funciona offline con firma criptográfica local.</span></li>
+                <li><div className="demo-list-icon"><Icon glyph={'📊'} /></div><span><strong>Trazabilidad total</strong> — Cada acceso queda registrado con timestamp, ubicación GPS y nivel de autenticación.</span></li>
             </ul>
             <div style={{ marginTop:36 }}>
               <button className="btn btn-primary" onClick={() => onOpenModal('demo')}>Agendar demostración gratuita →</button>
@@ -67,9 +68,9 @@ export function DemoSection({ onOpenModal }: SectionProps) {
               </div>
               <div className="admin-activity-label">ACTIVIDAD RECIENTE</div>
               <div className="admin-activity">
-                <div className="activity-item ok"><span>✅</span><div><div className="activity-title">J. Hernández · Acceso concedido</div><div className="activity-sub">Biblioteca Principal · hace 28s</div></div></div>
-                <div className="activity-item deny"><span>❌</span><div><div className="activity-title">Intento no autorizado</div><div className="activity-sub">Zona Restringida · hace 1min</div></div></div>
-                <div className="activity-item new"><span>🆕</span><div><div className="activity-title">M. López · Credencial emitida</div><div className="activity-sub">Admin · hace 3min</div></div></div>
+                <div className="activity-item ok"><span><Icon glyph={'✅'} /></span><div><div className="activity-title">J. Hernández · Acceso concedido</div><div className="activity-sub">Biblioteca Principal · hace 28s</div></div></div>
+                <div className="activity-item deny"><span><Icon glyph={'❌'} /></span><div><div className="activity-title">Intento no autorizado</div><div className="activity-sub">Zona Restringida · hace 1min</div></div></div>
+                <div className="activity-item new"><span><Icon glyph={'🆕'} /></span><div><div className="activity-title">M. López · Credencial emitida</div><div className="activity-sub">Admin · hace 3min</div></div></div>
               </div>
             </div>
           </div>
@@ -221,7 +222,7 @@ export function TechSection() {
               <div className="glass-card-shine" />
               <div className="glass-card-content">
                 <div className="gc-tag">{c.tag}</div>
-                <div className="gc-icon">{c.icon}</div>
+                  <div className="gc-icon"><Icon glyph={c.icon} /></div>
                 <div className="gc-title">{c.title}</div>
                 <div className="gc-desc">{c.desc}</div>
                 <div className="gc-footer">
@@ -250,14 +251,14 @@ export function CTA({ onOpenModal }: SectionProps) {
           <h2>Empieza tu prueba gratuita hoy</h2>
           <p>30 días sin costo, sin tarjeta de crédito.<br />Setup en menos de 24 horas con soporte dedicado.</p>
           <div className="security-row" style={{ justifyContent:'center' }}>
-            <div className="sec-badge">🔐 Cifrado AES-256</div>
-            <div className="sec-badge">🛡️ ISO 27001</div>
-            <div className="sec-badge">✅ GDPR Compliant</div>
+            <div className="sec-badge"><Icon glyph={'🔐'} /> Cifrado AES-256</div>
+            <div className="sec-badge"><Icon glyph={'🛡️'} /> ISO 27001</div>
+            <div className="sec-badge"><Icon glyph={'✅'} /> GDPR Compliant</div>
             <div className="sec-badge">🇲🇽 Datos en México</div>
           </div>
           <div className="cta-actions">
-            <button className="btn btn-primary btn-lg" onClick={() => onOpenModal('demo')}>🚀 Solicitar demo gratuita</button>
-            <button className="btn btn-outline btn-lg" onClick={() => onOpenModal('contact')}>💬 Hablar con un experto</button>
+            <button className="btn btn-primary btn-lg" onClick={() => onOpenModal('demo')}><Icon glyph={'🚀'} /> Solicitar demo gratuita</button>
+            <button className="btn btn-outline btn-lg" onClick={() => onOpenModal('contact')}><Icon glyph={'💬'} /> Hablar con un experto</button>
           </div>
         </div>
       </div>
@@ -272,7 +273,7 @@ export function Footer() {
       <div className="container">
         <div className="footer-grid">
           <div className="footer-brand">
-            <a href="#" className="logo"><div className="logo-icon">🪪</div>VIRTUAL<span>ID</span></a>
+            <a href="#" className="logo"><div className="logo-icon"><Icon glyph={'🪪'} /></div>VIRTUAL<span>ID</span></a>
             <p>Plataforma tecnológica de identificación digital diseñada para reemplazar las credenciales físicas institucionales con identidades virtuales seguras y escalables.</p>
           </div>
           <div className="footer-col"><h4>Producto</h4><a href="#">Características</a><a href="#">Precios</a><a href="#">Seguridad</a><a href="#">API &amp; Docs</a></div>
