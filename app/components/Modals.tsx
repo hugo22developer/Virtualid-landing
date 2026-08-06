@@ -138,7 +138,7 @@ const submit = async () => {
     setSubmitting(true)
 
     /* 1. Crear empresa */
-    const empresaRes = await fetch('https://virtualid-landing.onrender.com/api/auth/empresa', 
+    const empresaRes = await fetch('https://backendv-4q6s.onrender.com/api/auth/empresa', 
       {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -159,7 +159,7 @@ const submit = async () => {
     const clave = empresaData.clave_segura
 
     /* 2. Crear admin */
-    const adminRes = await fetch('https://virtualid-landing.onrender.com/api/auth/register', {
+    const adminRes = await fetch('https://backendv-4q6s.onrender.com/api/auth/register', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -707,7 +707,7 @@ const submit = async () => {
   try {
     setSubmitting(true)
 
-    const res = await fetch('https://virtualid-landing.onrender.com/api/auth/login', {
+    const res = await fetch('https://backendv-4q6s.onrender.com/api/auth/login', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
